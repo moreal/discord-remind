@@ -16,7 +16,7 @@ class RemindBot extends CommandClient {
         description: "Set your reminder",
         options: [
           {
-            name: 'MESSAGE_AND_SCHEDULE',
+            name: 'message_and_schedule',
             description: 'The messsage to remind.',
             required: true,
             type: ApplicationCommandOptionType.STRING
@@ -29,7 +29,7 @@ class RemindBot extends CommandClient {
 
   @slash()
   remind(interaction: ApplicationCommandInteraction): void {
-    const message = interaction.option<string>("MESSAGE_AND_SCHEDULE");
+    const message = interaction.option<string>("message_and_schedule");
     interaction.reply(`It will process ${message}`);
   }
 }
